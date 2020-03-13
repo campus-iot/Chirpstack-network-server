@@ -320,9 +320,9 @@ func resolveDeviceLocation(ctx *dataContext) error {
 	// meta-data (at least 3 gateways), add it to the buffer.
 	var rxInfoWithFineTimestamp []*gw.UplinkRXInfo
 	for i := range ctx.RXPacket.RXInfoSet {
-		if ctx.RXPacket.RXInfoSet[i].FineTimestampType == gw.FineTimestampType_PLAIN {
-			rxInfoWithFineTimestamp = append(rxInfoWithFineTimestamp, ctx.RXPacket.RXInfoSet[i])
-		}
+		//if ctx.RXPacket.RXInfoSet[i].FineTimestampType == gw.FineTimestampType_PLAIN {
+		rxInfoWithFineTimestamp = append(rxInfoWithFineTimestamp, ctx.RXPacket.RXInfoSet[i])
+		//}
 	}
 	if len(rxInfoWithFineTimestamp) >= 3 {
 		buffer = append(buffer, &geo.FrameRXInfo{
